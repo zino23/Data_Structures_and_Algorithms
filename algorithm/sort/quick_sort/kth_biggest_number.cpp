@@ -28,9 +28,7 @@ int main()
     int n, k;
     cin >> n >> k;
     for (int i = 0; i < n; i ++ ) scanf("%d", &q[i]);
-    
-    quick_select(q, 0, n - 1, k);
-    
+        
 /*     calculate kth biggest distinct number
     int i = 0, j = 1;
     while (j < k)
