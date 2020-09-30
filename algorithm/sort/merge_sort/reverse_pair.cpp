@@ -9,17 +9,18 @@ using namespace std;
     3. the reverse pairs whose elements are in different arrays
 */
 
+typedef long long ll;
 const int N = 1e5 + 10;
 int q[N];
 
-int reverse_pair(int q[], int l, int r)
+ll reverse_pair(int q[], int l, int r)
 {
     if (l >= r) return 0;  // no reverse pair if there is only one element
     int middle = l + r >> 1;
-    int num_left = reverse_pair(q, l, middle);
-    int num_right = reverse_pair(q, middle + 1, r);
+    ll num_left = reverse_pair(q, l, middle);
+    ll num_right = reverse_pair(q, middle + 1, r);
 
-    int num_total = num_left + num_right;  // reverse pairs whose elements are in the same array
+    ll num_total = num_left + num_right;  // reverse pairs whose elements are in the same array
 
     // merge and count the number of reverse pairs whose elements are in different arrays
     int tmp[r - l + 1], i = l, j = middle + 1, k = 0;
@@ -49,7 +50,7 @@ int main()
     int n;
     cin >> n;
     for (int i = 0; i < n; i ++ ) scanf("%d", &q[i]);
-    printf("Total %d pairs", reverse_pair(q, 0, n - 1));
+    printf("Total %lld pairs", reverse_pair(q, 0, n - 1));
     return 0;
 }
 
