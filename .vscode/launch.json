@@ -5,11 +5,21 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "CodeLens (Launch) - arithmetic_expression_eva_for_fully_parenthesized",
+            "request": "launch",
+            "mainClass": "arithmetic_expression_eva_for_fully_parenthesized",
+            "projectName": "AcWing_315799db"
+        },
+        {
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
             "program": "${fileDirname}/${fileBasenameNoExtension}.o",
-            "args": ["-arg1", "-arg2"],
+            "args": [
+                "-arg1",
+                "-arg2"
+            ],
             "cwd": "${fileDirname}"
         }
     ]
