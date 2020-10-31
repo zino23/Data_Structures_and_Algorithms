@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Stack",
+            "request": "launch",
+            "mainClass": "Stack",
+            "projectName": "AcWing_315799db"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Fully_parenthesized_arithmetic_expression_eva",
+            "request": "launch",
+            "mainClass": "Fully_parenthesized_arithmetic_expression_eva",
+            "projectName": "AcWing_315799db"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - QuickStart",
+            "request": "launch",
+            "mainClass": "QuickStart",
+            "projectName": "AcWing_315799db"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - arithmetic_expression_eva_for_fully_parenthesized",
             "request": "launch",
             "mainClass": "arithmetic_expression_eva_for_fully_parenthesized",

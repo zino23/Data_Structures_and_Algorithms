@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class arithmetic_expression_eva_for_fully_parenthesized
+public class Fully_parenthesized_arithmetic_expression_eva
 {
     public static void main(String[] args)
     {
