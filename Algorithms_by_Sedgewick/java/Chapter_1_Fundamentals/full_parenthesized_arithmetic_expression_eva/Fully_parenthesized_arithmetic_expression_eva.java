@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.*;
 
 public class Fully_parenthesized_arithmetic_expression_eva
 {
