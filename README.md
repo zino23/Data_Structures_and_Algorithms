@@ -1,2 +1,2 @@
-# Algorithms_in_Cpp
-Algorithms written in C++
+# Data Structures and Algorithms
+Algorithms written in C++ and Java
