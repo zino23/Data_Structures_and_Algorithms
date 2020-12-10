@@ -3,7 +3,7 @@
 
 using namespace std;
 
-// the graph is composed of n nodes and m edges, and m ~ n ^ 2 
+// the graph is composed of n nodes and m edges, and m ~ n^2 
 const int N = 510;
 int dist[N];  // shortest distance between node 1 to node i
 int g[N][N];  // use adjacent matrix to store the graph
@@ -12,6 +12,9 @@ int n, m;
 
 int dijkstra()
 {
+    // the time complexity is O(n^2) (outer and inner loop time complexity multiplied),
+    // and is independent of the number of edges m
+
     // 1. set distance between node 1 and node i to inf, and set distance between node 1 and 1 to 0
     memset(dist, 0x3f, sizeof dist);
     dist[1] = 0;
@@ -20,7 +23,8 @@ int dijkstra()
     // loop n times, after each loop, a node's shortest distance to node 1 is calculated
     for ( int i = 0; i < n; i ++ )
     {
-        // 3. calculate the node with the shortest diatance to node 1
+        // 3. first inner loop, loop through all the nodes, i.e. n times
+        // calculate the node with the shortest diatance to node 1
         int t = -1;  // the node that has the shortest distance to node 1 might be node 1
         for ( int j = 1; j <= n; j ++ )
         {
@@ -30,6 +34,10 @@ int dijkstra()
 
         // 4. mark the node as completed
         st[t] = true;
+
+        // second inner loop, loop through all the nodes, i.e. n times
+        // if the heap optimized version is used, second loop will loop through all the edges,
+        // i.e. ~(n^2) edges, the total time complexity will become O(n^3)
 
         for ( int j = 1; j <= n; j ++ )
         {
