@@ -1,3 +1,4 @@
+// this algorithm assumes there are no self-loops or parallel edges
 #include <iostream>
 #include <cstring>
 
