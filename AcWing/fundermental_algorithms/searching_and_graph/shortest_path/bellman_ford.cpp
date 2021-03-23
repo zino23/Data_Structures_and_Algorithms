@@ -39,7 +39,7 @@ int main()
         cin >> x >> y >> z;
         e[i] = {x, y, z};
     }
-    
+
     if ( bellman_ford() ) cout << dist[n];
     else cout << "impossible";
     cout << endl;

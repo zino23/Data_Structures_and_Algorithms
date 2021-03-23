@@ -14,7 +14,7 @@ int prim()
 	int res = 0;
 	memset(dist, 0x3f, sizeof dist);
 	dist[1] = 0;
-	
+
 	for ( int i = 0; i < n; i ++ )
 	{
 		int t = -1; // in the first loop, vertex 1 is selected
@@ -25,14 +25,15 @@ int prim()
 				 t = j;
 			}
 		}
-        
+
         st[t] = true;
-		if ( dist[t] == INF ) return INF;
+		if ( dist[t] == INF ) return INF;  // cannot find a mst
 		else res += dist[t];
-		
+
 		for ( int j = 1; j <= n; j ++ )
 		{
-			dist[j] = min(dist[j], g[t][j]);
+			dist[j] = min(dist[j], g[t][j]);  // given any vertex x, dist[x] will only change
+			// only when there is an edge t->x
 		}
 	}
 	return res;
@@ -55,5 +56,5 @@ int main()
 	else cout << res;
 	cout << endl;
 	return 0;
-	
+
 }
