@@ -2,9 +2,11 @@
 Review/
 
 # Ignore settings
-.vscode
-
+.vscode 
+.clang-format
 .idea
+compile_flags.txt
+util
 
 # Compiled class file
 *.class
