@@ -10,5 +10,23 @@
  */
 class Solution {
  public:
-  TreeNode* inorderSuccessor( TreeNode* p ) {}
+  TreeNode *next(TreeNode *p) {
+    while (p->left) {
+      p = p->left;
+    }
+    return p;
+  }
+
+  TreeNode *inorderSuccessor(TreeNode *p) {
+    if (!p->right) {
+      // Left subtree has been traversed, if right subtree does not exist
+      while (p->father && p->father->left != p) {
+        p = p->father;
+      }
+      return p->father;
+    }
+
+    // Right subtree exist
+    return next(p->right);
+  }
 };
