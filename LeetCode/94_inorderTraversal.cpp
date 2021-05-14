@@ -16,8 +16,8 @@
 using namespace std;
 class Solution {
  public:
-  vector<int> inorderTraversal(TreeNode* root) {
-    stack<TreeNode*> stk;
+  vector<int> inorderTraversal(TreeNode *root) {
+    stack<TreeNode *> stk;
     std::vector<int> res;
     // The stack will be empty in two cases:
     // 1. The actual root of the tree is popped
@@ -41,7 +41,7 @@ class Solution {
     return res;
   }
 
-  vector<int> inorderTraversalRecur(TreeNode* root) {
+  vector<int> inorderTraversalRecur(TreeNode *root) {
     if (!root) return {};
     auto left = inorderTraversal(root->left);
     auto right = inorderTraversal(root->right);
