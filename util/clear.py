@@ -8,5 +8,5 @@ for current_path, subdirs, files in os.walk(root_dir):
             shutil.rmtree(os.path.join(current_path, subdir))
     for file in files:
         with open(os.path.join(current_path, file)):
-            if file.endswith('.o') or file.endswith('.out'):
+            if file.endswith('.o') or file.endswith('.out') or file.endswith('.DS_Store'):
                 os.remove(os.path.join(current_path, file))
