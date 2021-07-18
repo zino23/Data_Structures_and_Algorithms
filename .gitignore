@@ -1,7 +1,8 @@
 # review 
-Review/
+review/
 cpp/
-Interview/
+interview/
+util/
 
 # Ignore settings
 .vscode 
