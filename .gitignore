@@ -3,6 +3,7 @@ review/
 cpp/
 interview/
 util/
+design_patterns
 
 # Ignore settings
 .vscode 

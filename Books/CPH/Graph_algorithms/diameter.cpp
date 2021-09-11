@@ -41,11 +41,12 @@ void calc_max_length(int x) {
   max_len[x] = child_lengths[0] + child_lengths[1] + 2;
 }
 
+// The child node that is in the path that has the largest length
 int child_node[N];
-// Return the child node that is in the path that has the largest length
 void dfs(int x, int parent) {
   to_leaf[x] = 0;
-  int tmp = 0;
+  // the max length of child-to-leaf
+  int tmp = -1;
   for (auto i : head[x]) {
     if (i != parent) {
       dfs(i, x);
@@ -55,6 +56,7 @@ void dfs(int x, int parent) {
       }
     }
   }
+  if (tmp == -1) return;
   to_leaf[x] = tmp + 1;
 }
 
@@ -88,7 +90,8 @@ int main() {
     path.push_back(cur);
     cur = child_node[cur];
   }
-  cout << "From " << cur << " to its furtherest leaf: " << endl;
+  cout << "From 3"
+       << " to its furtherest leaf: " << endl;
   for (auto i : path) {
     cout << i << endl;
   }
@@ -100,6 +103,7 @@ int main() {
   memset(visited, false, n);
   dfs(cur, cur);
   path.clear();
+  int res = cur;
   while (!visited[cur]) {
     visited[cur] = true;
     path.push_back(cur);
@@ -109,6 +113,8 @@ int main() {
   for (auto i : path) {
     cout << i << endl;
   }
+
+  cout << "diamter: " << to_leaf[res] << endl;
   return 0;
 }
 

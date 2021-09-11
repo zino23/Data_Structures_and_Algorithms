@@ -15,9 +15,10 @@ struct TreeNode {
 };
 
 class Solution {
- public:
+public:
   vector<int> res;
 
+  /* For each node, print in the order: middle, left, right */
   vector<int> preorderTraversal(TreeNode *root) {
     stack<TreeNode *> stk;
     vector<int> ans;
@@ -37,8 +38,35 @@ class Solution {
     return ans;
   }
 
+  vector<int> preorderTraversalV2(TreeNode *root) {
+    if (!root) {
+      return {};
+    }
+
+    stack<TreeNode *> stk;
+    vector<int> res;
+    stk.push(root);
+    while (!stk.empty()) {
+      auto t = stk.top();
+      stk.pop();
+      res.push_back(t->val);
+
+      /* Push right subnode first  */
+      if (t->right) {
+        stk.push(t->right);
+      }
+
+      if (t->left) {
+        stk.push(t->left);
+      }
+    }
+    return res;
+  }
+
   void preorderRecur(TreeNode *root) {
-    if (root == nullptr) { return; }
+    if (root == nullptr) {
+      return;
+    }
 
     res.push_back(root->val);
     preorderRecur(root->left);
